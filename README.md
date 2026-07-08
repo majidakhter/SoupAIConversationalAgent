@@ -1,3 +1,4 @@
+ Thanks for getting here! please <b>give a ⭐</b> if you liked the project. This project is related to conversational AI Agent.
 Semantic Kernel Soup Order Agent
 A practical example demonstrating how to build a conversational AI agent using Microsoft Semantic Kernel with Google Gemini as the LLM provider. This project shows how to 
 transform traditional C# business logic into AI-powered, natural language interfaces through function calling.
