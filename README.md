@@ -52,7 +52,7 @@ Visual Studio 2022 / VS Code / Rider
 
 Clone the repository:
 
-command prompt-->projectdirectory> git clone https://github.com/moises-zp/agent_for_pizzas.git
+command prompt-->projectdirectory> git clone https://github.com/majidakhter/SoupAIConversationalAgent.git
 cd SoupAIConversationalAgent
 Install dependencies:
 
