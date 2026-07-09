@@ -65,7 +65,7 @@ namespace SoupAIConversationalAgent.Plugins
 
         [KernelFunction("get_cart")]
         [Description("Returns the user's current cart, including the total price and items in the cart.")]
-        public async Task<Cart> GetCart()
+        public async Task<ShoppingCart> GetCart()
         {
             Guid cartId = await userContext.GetCartIdAsync();
             return await soupService.GetCart(cartId);

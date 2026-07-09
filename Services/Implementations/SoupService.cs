@@ -6,7 +6,7 @@ namespace SoupAIConversationalAgent.Services.Implementations
 public class SoupService : ISoupService
     {
         // We simulate in-memory storage for the shopping carts.
-        private static readonly Dictionary<Guid, Cart> _carts = new();
+        private static readonly Dictionary<Guid, ShoppingCart> _carts = new();
         private static int _nextSoupId = 1;
 
         public async Task<Menu> GetMenu()
@@ -54,7 +54,7 @@ public class SoupService : ISoupService
             // Get or create the cart
             if (!_carts.ContainsKey(cartId))
             {
-                _carts[cartId] = new Cart { CartId = cartId };
+                _carts[cartId] = new ShoppingCart { CartId = cartId };
             }
 
             var cart = _carts[cartId];
@@ -158,11 +158,11 @@ public class SoupService : ISoupService
             return await Task.FromResult(soup);
         }
 
-        public async Task<Cart> GetCart(Guid cartId)
+        public async Task<ShoppingCart> GetCart(Guid cartId)
         {
             if (!_carts.ContainsKey(cartId))
             {
-                _carts[cartId] = new Cart { CartId = cartId };
+                _carts[cartId] = new ShoppingCart { CartId = cartId };
             }
 
             return await Task.FromResult(_carts[cartId]);
@@ -207,12 +207,12 @@ public class SoupService : ISoupService
             };
 
             // Clear the cart after checkout
-            _carts[cartId] = new Cart { CartId = cartId };
+            _carts[cartId] = new ShoppingCart { CartId = cartId };
 
             return await Task.FromResult(checkoutResponse);
         }
 
-        private void UpdateCartTotals(Cart cart)
+        private void UpdateCartTotals(ShoppingCart cart)
         {
             cart.Subtotal = cart.Items.Sum(p => p.TotalPrice);
             cart.Tax = cart.Subtotal * 0.08m; // 8% tax

@@ -1,7 +1,7 @@
 ﻿
 namespace SoupAIConversationalAgent.Models
 {
-    public class Cart
+    public class ShoppingCart
     {
         public Guid CartId { get; set; }
         public List<Soup> Items { get; set; } = new();
@@ -11,7 +11,7 @@ namespace SoupAIConversationalAgent.Models
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
-        public Cart()
+        public ShoppingCart()
         {
             CreatedAt = DateTime.UtcNow;
             UpdatedAt = DateTime.UtcNow;

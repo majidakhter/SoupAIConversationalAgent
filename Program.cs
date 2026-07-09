@@ -57,8 +57,8 @@ builderHosting.Services.AddGoogleAIGeminiChatCompletion(modelId, apiKey);
 
 
 // Register the worker that will use the Kernel and Logger.
-builderHosting.Services.AddTransient<Worker>();
+builderHosting.Services.AddTransient<WorkerProcess>();
 
 var host = builderHosting.Build();
-var worker = host.Services.GetRequiredService<Worker>();
+var worker = host.Services.GetRequiredService<WorkerProcess>();
 await worker.RunAsync();

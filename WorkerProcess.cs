@@ -7,15 +7,15 @@ using SoupAIConversationalAgent.Plugins;
 
 namespace SoupAIConversationalAgent
 {
-    public class Worker
+    public class WorkerProcess
     {
-        private readonly ILogger<Worker> _logger;
+        private readonly ILogger<WorkerProcess> _logger;
         private readonly Kernel _kernel;
 
         private readonly OrderSoupPlugin orderSoupPlugin;
 
         private readonly ChatHistory history;
-        public Worker(ILogger<Worker> logger, Kernel kernel, OrderSoupPlugin orderSoupPlugin, ChatHistory chatHistory)
+        public WorkerProcess(ILogger<WorkerProcess> logger, Kernel kernel, OrderSoupPlugin orderSoupPlugin, ChatHistory chatHistory)
         {
             _logger = logger;
             _kernel = kernel;
@@ -51,7 +51,7 @@ namespace SoupAIConversationalAgent
             });
 
 
-            Console.WriteLine("Escribe tus mensajes (o 'salir' para terminar):\n");
+            Console.WriteLine("Type your messages (or 'exit' to finish):\n");
             // Initiate a back-and-forth chat
             string? userInput = "";
 
@@ -65,7 +65,7 @@ namespace SoupAIConversationalAgent
                 userInput = Console.ReadLine();
 
                 // Check if the user wants to exit or if the input is null.
-                if (string.IsNullOrWhiteSpace(userInput) || userInput.Equals("salir", StringComparison.OrdinalIgnoreCase))
+                if (string.IsNullOrWhiteSpace(userInput) || userInput.Equals("exit", StringComparison.OrdinalIgnoreCase))
                 {
                     break;
                 }

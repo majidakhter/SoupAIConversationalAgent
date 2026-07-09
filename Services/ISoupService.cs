@@ -16,7 +16,7 @@ namespace SoupAIConversationalAgent.Services
             string specialInstructions);
         Task<RemoveSoupResponse> RemoveSoupFromCart(Guid cartId, int soupId);
         Task<Soup?> GetSoupFromCart(Guid cartId, int soupId);
-        Task<Cart> GetCart(Guid cartId);
+        Task<ShoppingCart> GetCart(Guid cartId);
         Task<CheckoutResponse> Checkout(Guid cartId, Guid paymentId);
     }
 }
