@@ -25,7 +25,7 @@ namespace SoupAIConversationalAgent.Plugins
 
         //Native Function Plugins
         [KernelFunction("get_soup_menu")]
-        public async Task<Menu> GetPizzaMenuAsync()
+        public async Task<Menu> GetSoupMenuAsync()
         {
             return await soupService.GetMenu();
         }
